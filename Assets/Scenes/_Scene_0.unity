@@ -501,7 +501,7 @@ MonoBehaviour:
   easing: 0.05
   minXY: {x: 0, y: 0}
   _____________________________: 0
-  poi: {fileID: 0}
+  poi: {fileID: 576331908}
   camZ: 0
 --- !u!114 &576331913
 MonoBehaviour:
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 4026350126743282076, guid: 0942cc17f0eae72459d34407a65bd07f, type: 3}
-  velocityMult: 12
+  velocityMult: 11
   _____________________________: 0
   launchPoint: {fileID: 0}
   launchPos: {x: 0, y: 0, z: 0}
