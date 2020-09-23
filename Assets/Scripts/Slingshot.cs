@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
+    static public Slingshot S;
+
     public GameObject prefabProjectile;
     public float velocityMult = 10f;
     public bool _____________________________;
@@ -12,8 +14,7 @@ public class Slingshot : MonoBehaviour
     public GameObject projectile;
     public bool aimingMode;
 
-    void Update()
-    {
+    void Update() {
         // If Slingshot is not in aimingMode, don't run this code
         if (!aimingMode) return;
         // Get the current mouse position in 2D screen coordinates
@@ -45,28 +46,26 @@ public class Slingshot : MonoBehaviour
         }
     }
 
-    void Awake()
-    {
+    void Awake() {
+        S = this;
+
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
         launchPos = launchPointTrans.position;
     }
 
-    void OnMouseEnter()
-    {
+    void OnMouseEnter() {
         //print("Slingshot:OnMouseEnter()");
         launchPoint.SetActive(true);
     }
 
-    void OnMouseExit()
-    {
+    void OnMouseExit() {
         //print("Slingshot:OnMouseExit()");
         launchPoint.SetActive(false);
     }
 
-    void OnMouseDown()
-    {
+    void OnMouseDown() {
         // The player has pressed the mouse button while over Slingshot
         aimingMode = true;
         // Instantiate a Projectile
